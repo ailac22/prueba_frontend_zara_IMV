@@ -7,6 +7,7 @@ Este repositorio contiene mi solución a una prueba técnica para la empresa Zar
 - [React Router 6](https://reactrouter.com/en/main)
 - [Tanstack Query](https://tanstack.com/query/latest)
 - [TailwindCSS](https://tailwindcss.com/)
+- [fast-xml-parser](https://www.npmjs.com/package/fast-xml-parser)
 
 # Uso
 

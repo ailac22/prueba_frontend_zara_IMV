@@ -8,7 +8,8 @@ type LookupResult = {
 			artistName: string,
 			collectionName: string,
 			trackName: string,
-			collectionCensoredName: string 
+			collectionCensoredName: string,
+      feedUrl: string
 }
 
 
