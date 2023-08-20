@@ -8,6 +8,8 @@ Este repositorio contiene mi solución a una prueba técnica para la empresa Zar
 - [Tanstack Query](https://tanstack.com/query/latest)
 - [TailwindCSS](https://tailwindcss.com/)
 - [fast-xml-parser](https://www.npmjs.com/package/fast-xml-parser)
+- [Material UI](https://mui.com/)
+- [date-fns](https://date-fns.org/)
 
 # Uso
 

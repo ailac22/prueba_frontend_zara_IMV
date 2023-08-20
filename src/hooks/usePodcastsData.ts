@@ -3,6 +3,7 @@ import PodcastListData from "../types/PodcastListData"
 import LookupResults from "../types/LookupResults"
 import { useQuery } from "@tanstack/react-query"
 import { XMLBuilder, XMLParser }  from "fast-xml-parser";
+import RSSData from "../types/RSSData";
 
 const podcastLimit = 100
 
@@ -30,21 +31,17 @@ export const usePodcastData = (id: string) => useQuery<LookupResults,Error>({
         .then((res) => JSON.parse(res.data.contents)),
   })
 
-export const usePodcastRSSData = async (rssUrl: string) => {
-
-  const { data } = useQuery<LookupResults,Error>({
+export const usePodcastRSSData = (rssUrl: string) => 
+   useQuery<RSSData,Error>({
     queryKey: [rssUrl], //TODO: Mejorar
-    queryFn: (): Promise<LookupResults> =>
+    queryFn: (): Promise<RSSData> =>
       axios
         .get(`https://api.allorigins.win/get?url=${encodeURIComponent(rssUrl)}`)
         .then((res) => {
-          console.log("xml data: ", res.data)
+          console.log("res.data.contents", res.data.contents)
           const cont = res.data.contents
-          console.log("cont: ", cont)
           let jObj = parser.parse(cont);
-
-          const xmlContent = builder.build(jObj);
-          console.log("xmlContent: ", jObj)
+          res.data = jObj
           return res
       })
         .then((res) => res.data),
@@ -52,7 +49,7 @@ export const usePodcastRSSData = async (rssUrl: string) => {
 
 
 
-}  
+  
 
 
 
