@@ -28,6 +28,7 @@ const router = createBrowserRouter([
           {
             path: ':podcastId/episode/:episodeId',
             element: <PodcastView/>
+            
           }
         ]
       },

@@ -7,8 +7,13 @@ type Entry = {
   id: Name
 }
 
+type Attributes = {
+  "im:id": string
+}
+
 export type Name = {
-  label: string
+  label: string,
+  attributes?: Attributes
 }
 
 export default Entry
