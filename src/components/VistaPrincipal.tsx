@@ -23,13 +23,10 @@ export default function VistaPrincipal() {
       author={entry['im:artist'].label} />
   })
 
-  return <div>
-    Podcasts
-    {error ? "sip" : "no hay error?"}
-
-    {podcastList}
-    
-
-  </div>
+  return ( 
+    <div className='grid grid-cols-4 gap-10'>
+      {podcastList}
+    </div>
+  )
 
 }
