@@ -1,6 +1,9 @@
 
 export type Item = {
-  title: string,
+  title: Tsr ,
+  guid: Tsr,
+  pubDate:Tsr,
+  "itunes:duration": Tsr
 }
 
 type Channel = {
@@ -12,6 +15,10 @@ type Channel = {
 type RSSData = {
   
   rss: {channel: Channel}
+}
+
+type Tsr = {
+  '#text': string
 }
 
 export default RSSData

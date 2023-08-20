@@ -7,8 +7,8 @@ import RSSData from "../types/RSSData";
 
 const podcastLimit = 100
 
-const parser = new XMLParser();
-const builder = new XMLBuilder();
+const parser = new XMLParser({alwaysCreateTextNode:true, ignoreAttributes:false, ignoreDeclaration:false, ignorePiTags: false});
+// const builder = new XMLBuilder();
 // useQuery<PodcastListData,Error>({
 //     queryKey: ['allPodcasts'],
 //     queryFn: usePodcastsData,
@@ -52,7 +52,9 @@ export const usePodcastRSSData = (rssUrl: string, id:string, enabled: boolean) =
         .then((res) => {
           console.log("res.data", res)
           const cont = res.data
-          let jObj = parser.parse(cont);
+          let jObj = parser.parse(cont, );
+            
+          console.log("jobj", jObj)
           res.data = jObj
           return res
       })

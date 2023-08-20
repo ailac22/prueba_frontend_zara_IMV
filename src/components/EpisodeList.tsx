@@ -8,8 +8,8 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { minutesToSeconds } from "date-fns";
 import { Item } from "../types/RSSData";
+import { Link } from 'react-router-dom'
 
 const parser = new XMLParser();
 
@@ -36,6 +36,8 @@ const EpisodeList = () => {
 
   console.log("DATA: ", rssData)
 
+  console.log("awwwwwwwawwwwwwww",rssData?.rss.channel.item[0].enclosure)
+
 
 
   return (
@@ -51,16 +53,25 @@ const EpisodeList = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {rssData?.rss.channel.item.map((row: Item) => (
+            {rssData?.rss.channel.item.map((row: Item, i: number) => (
               <TableRow
                 // key={row.name}
+                key={row.guid["#text"]}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
               >
                 <TableCell component="th" scope="row">
-                  {row.title}
+
+                  <Link key={row.guid["#text"]} to={`/podcast/${podcastId}/episode/${1}`}>
+                    {row.title["#text"]}
+                  </Link>
+            
                 </TableCell>
-                <TableCell align="right">1111</TableCell>
-                <TableCell align="right">2222</TableCell>
+                <TableCell align="right">
+                  {new Date(row.pubDate["#text"]).toLocaleDateString('en-US')}
+                </TableCell>
+                <TableCell align="right">
+                  {row["itunes:duration"]?.["#text"]}
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>
