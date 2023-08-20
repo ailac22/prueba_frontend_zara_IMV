@@ -1,10 +1,4 @@
-
-type PodcastCardProps = {
-  image: string,
-  name: string,
-  author: string
-}
-
+import PodcastCardProps from "../types/PodcastCardProps"
 
 const PodcastCard: React.FC<PodcastCardProps> =  ({image, name, author}) => {
 

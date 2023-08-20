@@ -6,6 +6,9 @@ import { useQuery, useQueryClient, QueryClient, QueryClientProvider} from '@tans
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import LayoutGeneral from './components/LayoutGeneral.tsx'
 import VistaPrincipal from './components/VistaPrincipal.tsx'
+import BarraLateralLayout from './components/BarraLateralLayout.tsx'
+import EpisodeList from './components/EpisodeList.tsx'
+import PodcastView from './components/PodcastView.tsx'
 
 const router = createBrowserRouter([
   {
@@ -14,6 +17,20 @@ const router = createBrowserRouter([
     children: [
 
       { index: true, element: <VistaPrincipal/> },
+      {
+        path: "/podcast",
+        element: <BarraLateralLayout image='a' name='b' author='c'/>,
+        children: [
+          {
+            path: ":podcastId",
+            element: <EpisodeList/>
+          },
+          {
+            path: ':podcastId/episode/:episodeId',
+            element: <PodcastView/>
+          }
+        ]
+      },
     ]
   }
 ])
