@@ -16,4 +16,5 @@ npm run dev
 
 y luego ir con el navegador a la url tipo localhost:{puerto} indicada
 
+# Notas para el evaluador
 

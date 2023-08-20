@@ -1,19 +1,14 @@
-import axios from 'axios'
-import { useQuery } from '@tanstack/react-query'
 import PodcastCard from './PodcastCard'
-import PodcastListData from '../types/PodcastListData'
 import { Link } from 'react-router-dom'
+import { usePodcastsData } from '../hooks/usePodcastsData'
+// import Parser from 'rss-parser'
+
+// const parser = new Parser()
 
 export default function VistaPrincipal() {
 
 
-  const { isLoading, error, data, isFetching } = useQuery<PodcastListData,Error>({
-    queryKey: ['allPodcasts'],
-    queryFn: (): Promise<PodcastListData> =>
-      axios
-        .get('https://itunes.apple.com/us/rss/toppodcasts/limit=100/genre=1310/json')
-        .then((res) => res.data),
-  })
+  const { isLoading, error, data, isFetching } = usePodcastsData()
 
   if (isLoading || isFetching || error) return <>Cargando...</>  //TODO: Mejorar esto
 

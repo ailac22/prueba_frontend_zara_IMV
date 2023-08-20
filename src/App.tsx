@@ -3,6 +3,7 @@ import './App.css'
 import VistaPrincipal from './components/VistaPrincipal'
 import LayoutGeneral from './components/LayoutGeneral';
 
+//TODO: Eliminar este archivo
 
 function App() {
 
