@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useOutletContext, useParams } from "react-router-dom";
 import { usePodcastData, usePodcastRSSData } from "../hooks/usePodcastsData";
 import { Item } from "../types/RSSData";
 import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
@@ -7,21 +7,7 @@ import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from
 
 const PodcastView = () => {
 
-  let { podcastId, episodeId } = useParams(); 
-
-  if (!episodeId) return <></>
-
-  const { isLoading, error, data, isFetching } = usePodcastData(podcastId as string)
-
-  if (error) return <></>
-
-  const rssURL = data?.results[0].feedUrl as string
-
-  const { isLoading: rssIsLoading, error: rssError, data: rssData, isFetching: rssIsFetching } = usePodcastRSSData(rssURL, podcastId as string, rssURL != undefined)
-
-  if (rssIsLoading || rssIsFetching || error) return <></>
-
-  let item: Item = rssData?.rss.channel.item[episodeId]
+  const [data, item] = useOutletContext();
 
 
   return <section>

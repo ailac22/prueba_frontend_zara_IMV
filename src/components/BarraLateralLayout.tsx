@@ -4,24 +4,43 @@ import PodcastCardProps from "../types/PodcastCardProps";
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
+import { Item } from "../types/RSSData";
+import { usePodcastData, usePodcastRSSData } from "../hooks/usePodcastsData";
 
-const BarraLateralLayout: React.FC<PodcastCardProps> = ({image, name, author}) => {
+const BarraLateralLayout = () => {
 
   let params = useParams();
 
+  let { podcastId, episodeId } = useParams(); 
 
+
+  const { isLoading, error, data, isFetching } = usePodcastData(podcastId as string)
+
+
+
+  const rssURL = data?.results[0].feedUrl as string
+
+
+  const { isLoading: rssIsLoading, error: rssError, data: rssData, isFetching: rssIsFetching } = usePodcastRSSData(rssURL, podcastId as string, rssURL != undefined)
+
+  if (rssIsLoading || rssIsFetching || error) return <></>
+
+  if (!data || !rssData)
+
+  if (error) return <></>
   console.log("los params: ", params)
+  console.log("data: ", data)
+  console.log("rssData: ", rssData)
+
 
   return (<section>
 
     <Card>
     <div>
-    {image}
-    {name}
-    {author}
+        
     </div>
     </Card>
-    <Outlet/>
+    <Outlet context={[data, rssData]}/>
   </section>)
 
 } 

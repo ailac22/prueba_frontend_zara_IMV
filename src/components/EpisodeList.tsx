@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useOutletContext, useParams } from "react-router-dom";
 import { usePodcastData, usePodcastRSSData } from "../hooks/usePodcastsData";
 import { XMLParser } from "fast-xml-parser";
 import Table from '@mui/material/Table';
@@ -15,30 +15,31 @@ const parser = new XMLParser();
 
 const EpisodeList = () => {
 
-  console.log(parser)
+  // console.log(parser)
+
+  // if (!podcastId) return <div></div>
+
+  // console.log("podcastId: ", podcastId)
+  // const { isLoading, error, data, isFetching } = usePodcastData(podcastId)
+
+  // console.log("original data: ", data)
+
+  // if (error) return <></>
+
+  // const rssURL = data?.results[0].feedUrl as string
+
+  // console.log("rssURL", rssURL)
+  // const { isLoading: rssIsLoading, error: rssError, data: rssData, isFetching: rssIsFetching } = usePodcastRSSData(rssURL, podcastId, rssURL != undefined)
+
+  // if (rssIsLoading || rssIsFetching || error) return <></>
+
+  // console.log("DATA: ", rssData)
+
+  // console.log("awwwwwwwawwwwwwww",rssData?.rss.channel.item[0].enclosure)
+
+
   let { podcastId } = useParams();
-
-  if (!podcastId) return <div></div>
-
-  console.log("podcastId: ", podcastId)
-  const { isLoading, error, data, isFetching } = usePodcastData(podcastId)
-
-  console.log("original data: ", data)
-
-  if (error) return <></>
-
-  const rssURL = data?.results[0].feedUrl as string
-
-  console.log("rssURL", rssURL)
-  const { isLoading: rssIsLoading, error: rssError, data: rssData, isFetching: rssIsFetching } = usePodcastRSSData(rssURL, podcastId, rssURL != undefined)
-
-  if (rssIsLoading || rssIsFetching || error) return <></>
-
-  console.log("DATA: ", rssData)
-
-  console.log("awwwwwwwawwwwwwww",rssData?.rss.channel.item[0].enclosure)
-
-
+  const [data, rssData] = useOutletContext();
 
   return (
 

@@ -18,7 +18,7 @@ const router = createBrowserRouter([
       { index: true, element: <VistaPrincipal/> },
       {
         path: "/podcast",
-        element: <BarraLateralLayout image='a' name='b' author='c'/>,
+        element: <BarraLateralLayout/>,
         children: [
           {
             path: ":podcastId",
