@@ -43,6 +43,7 @@ const EpisodeList = () => {
   return (
 
     <div>
+      <div className="bold bg-white border mb-3">Episodes: {rssData?.rss.channel.item.length}</div>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
