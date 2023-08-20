@@ -10,6 +10,11 @@ Este repositorio contiene mi solución a una prueba técnica para la empresa Zar
 - [fast-xml-parser](https://www.npmjs.com/package/fast-xml-parser)
 - [Material UI](https://mui.com/)
 - [date-fns](https://date-fns.org/)
+- [DOMPurify](https://www.npmjs.com/package/dompurify)
+- [react-render-html](https://www.npmjs.com/package/react-render-html)
+
+- [react-html-parser]
+
 
 # Uso
 
