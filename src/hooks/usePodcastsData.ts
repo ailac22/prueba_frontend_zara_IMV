@@ -13,6 +13,11 @@ const builder = new XMLBuilder();
 //     queryKey: ['allPodcasts'],
 //     queryFn: usePodcastsData,
 //   })
+//
+
+const allowCorsURL ='https://api.allorigins.win/get?url='
+
+// const allowCorsURL =''
 
 export const usePodcastsData = () => useQuery<PodcastListData,Error>({
     queryKey: ['allPodcasts'],
@@ -27,24 +32,35 @@ export const usePodcastData = (id: string) => useQuery<LookupResults,Error>({
     queryKey: ['podcasts', id],
     queryFn: (): Promise<LookupResults> =>
       axios
-        .get(`https://api.allorigins.win/get?url=${encodeURIComponent(`https://itunes.apple.com/lookup?id=${id}`)}`)
-        .then((res) => JSON.parse(res.data.contents)),
+        .get(`https://itunes.apple.com/lookup?id=${id}`, { timeout: 10000 })
+        // .get(`${allowCorsURL}${encodeURIComponent(`https://itunes.apple.com/lookup?id=${id}`)}`, { timeout: 300000 })
+        // .then((res) => JSON.parse(res.data.contents)),
+        .then ((res) => {
+      console.log(res)
+      return res
+    })
+        .then((res) => res.data),
   })
 
-export const usePodcastRSSData = (rssUrl: string) => 
+export const usePodcastRSSData = (rssUrl: string, id:string, enabled: boolean) => 
    useQuery<RSSData,Error>({
-    queryKey: [rssUrl], //TODO: Mejorar
-    queryFn: (): Promise<RSSData> =>
+    queryKey: ['rssPodcast',id], 
+    queryFn: (): Promise<any> =>
       axios
-        .get(`https://api.allorigins.win/get?url=${encodeURIComponent(rssUrl)}`)
+        .get(`${rssUrl}`, { timeout: 300000 })
+        // .get(`${allowCorsURL}${encodeURIComponent(rssUrl)}`, { timeout: 300000 })
         .then((res) => {
-          console.log("res.data.contents", res.data.contents)
-          const cont = res.data.contents
+          console.log("res.data", res)
+          const cont = res.data
           let jObj = parser.parse(cont);
           res.data = jObj
           return res
       })
-        .then((res) => res.data),
+        .then((res) => res.data)
+       .catch(error => console.log(error.message)),
+    enabled,
+    cacheTime: 300000,
+    staleTime: 300000
   })
 
 
