@@ -16,7 +16,7 @@ const parser = new XMLParser({alwaysCreateTextNode:true, ignoreAttributes:false,
 //   })
 //
 
-// const allowCorsURL ='https://api.allorigins.win/get?url='
+const allowCorsURL ='https://corsproxy.io/?'
 
 // const allowCorsURL =''
 
@@ -33,8 +33,8 @@ export const usePodcastData = (id: string) => useQuery<LookupResults,Error>({
     queryKey: ['podcasts', id],
     queryFn: (): Promise<LookupResults> =>
       axios
-        .get(`https://itunes.apple.com/lookup?id=${id}`, { timeout: 10000 })
-        // .get(`${allowCorsURL}${encodeURIComponent(`https://itunes.apple.com/lookup?id=${id}`)}`, { timeout: 300000 })
+        // .get(`https://itunes.apple.com/lookup?id=${id}`, { timeout: 10000 })
+        .get(`${allowCorsURL}${encodeURIComponent(`https://itunes.apple.com/lookup?id=${id}`)}`, { timeout: 300000 })
         // .then((res) => JSON.parse(res.data.contents)),
         .then ((res) => {
       console.log(res)
@@ -48,8 +48,8 @@ export const usePodcastRSSData = (rssUrl: string, id:string, enabled: boolean) =
     queryKey: ['rssPodcast',id], 
     queryFn: (): Promise<any> =>
       axios
-        .get(`${rssUrl}`, { timeout: 300000 })
-        // .get(`${allowCorsURL}${encodeURIComponent(rssUrl)}`, { timeout: 300000 })
+        // .get(`${rssUrl}`, { timeout: 300000 })
+        .get(`${allowCorsURL}${encodeURIComponent(rssUrl)}`, { timeout: 300000 })
         .then((res) => {
           console.log("res.data", res)
           const cont = res.data
