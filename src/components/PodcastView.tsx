@@ -2,8 +2,6 @@ import { useParams } from "react-router-dom";
 import { useRssData } from "../hooks/usePodcastsData";
 import { Item } from "../types/RSSData";
 import ReactHtmlParser from 'react-html-parser';
-// import DOMPurify from 'dompurify';
-// import renderHTML from 'react-render-html';
 
 const PodcastView = () => {
 

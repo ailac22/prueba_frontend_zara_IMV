@@ -18,7 +18,10 @@ Este repositorio contiene mi solución a una prueba técnica para la empresa Zar
 
 # Uso
 
+Se puede ver la web directamente en el [deploy de Netlify](https://64e2e2a66eefb644230cf845--chipper-bunny-025dbd.netlify.app/), o bien descargarse el repo y hacer en local
+
 ```bash
+npm i --legacy-peer-deps
 npm run dev
 ```
 
