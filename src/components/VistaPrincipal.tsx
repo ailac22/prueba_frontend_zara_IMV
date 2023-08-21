@@ -13,17 +13,33 @@ export default function VistaPrincipal() {
   const podcastList = data.feed.entry.map(entry => {
     return (
       <Link key={entry.id.label} to={`/podcast/${entry.id.attributes?.['im:id']}`}>
-        <PodcastCard  
-        image={entry['im:image'][2].label}  
-        name={entry['im:name'].label} 
-        author={entry['im:artist'].label} />
+        <PodcastCard
+          image={entry['im:image'][2].label}
+          name={entry['im:name'].label}
+          author={entry['im:artist'].label} />
       </Link>
     )
   })
 
-  return ( 
-    <div className='grid grid-cols-4 gap-10'>
-      {podcastList}
+  return (
+    <div>
+      <div className='mb-5 flex items-center justify-end'>
+        <div className='flex items-center bg-blue-400 rounded text-bold h-7 mr-2 p-2 text-center'>{100}</div>
+        <input
+          type="search"
+          class="relative m-0 block w-64 min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-transparent 
+          bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] 
+          text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary 
+          focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-500 dark:focus:border-primary" 
+          placeholder='Filter podcasts...'
+
+        />
+          
+
+      </div>
+      <div className='grid grid-cols-4 gap-10'>
+        {podcastList}
+      </div>
     </div>
   )
 
