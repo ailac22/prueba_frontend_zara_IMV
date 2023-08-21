@@ -2,7 +2,7 @@ import axios from "axios"
 import PodcastListData from "../types/PodcastListData"
 import LookupResults from "../types/LookupResults"
 import { useQuery } from "@tanstack/react-query"
-import { XMLBuilder, XMLParser }  from "fast-xml-parser";
+import { XMLParser }  from "fast-xml-parser";
 import RSSData from "../types/RSSData";
 
 const podcastLimit = 100
