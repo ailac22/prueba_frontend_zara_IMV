@@ -13,7 +13,6 @@ const BarraLateralLayout = () => {
 
   const rssURL = data?.results[0].feedUrl as string
 
-
   const { isLoading: rssIsLoading, data: rssData, isFetching: rssIsFetching } =
     usePodcastRSSData(rssURL, podcastId as string, rssURL != undefined)
 
@@ -24,13 +23,12 @@ const BarraLateralLayout = () => {
   return (<section>
 
     <div className='flex items-start'>
-      <CardContainer className="w-72 mr-10">
-
+      <CardContainer className="mr-28 w-64">
         {/* <Card className = 'flex flex-col drop-shadow-sm items-center p-2'> */}
         <div className='flex flex-col stretch '>
           <div className='flex items-center justify-center'>
             <Link to={`/podcast/${podcastId}`} >
-              <img src={data?.results[0].artworkUrl600} className='rounded-lg w-64' />
+              <img src={data?.results[0].artworkUrl600} className='rounded-lg w-64 text-sky-500' />
             </Link>
           </div>
           <hr className='mt-3'></hr>

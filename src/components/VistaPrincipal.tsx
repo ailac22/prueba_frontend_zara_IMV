@@ -33,7 +33,7 @@ export default function VistaPrincipal() {
   return (
     <div>
       <div className='mb-5 flex items-center justify-end'>
-        <div className='flex items-center bg-blue-400 rounded text-bold h-7 mr-2 p-2 text-center'>{data.feed.entry.filter(filterFn).length}</div>
+        <div className='flex items-center bg-blue-400 rounded text-bold h-7 mr-2 p-2 text-center font-bold text-2xl text-white'>{data.feed.entry.filter(filterFn).length}</div>
         <input
           type="search"
           className="relative m-0 block grow-0 w-80 min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-transparent 

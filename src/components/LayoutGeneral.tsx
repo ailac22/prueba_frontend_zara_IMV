@@ -4,7 +4,7 @@ const LayoutGeneral = () => {
 
   return (
     <main className='flex justify-center'>
-      <div className='flex justify-center md:max-w-6xl w-10/12 pt-5'>
+      <div className='flex justify-center md:w-full mx-32 w-64 pt-5 '>
 
         <div>
           <Link to={'/'}>

@@ -10,12 +10,13 @@ import { Item } from "../types/RSSData";
 import { Link } from 'react-router-dom'
 import { useRssData } from "../hooks/usePodcastsData";
 import CardContainer from "./CardContainer";
-
+import ReactHtmlParser from 'react-html-parser';
 
 const EpisodeList = () => {
 
   let { podcastId } = useParams();
   const { rssData } = useRssData()
+
 
   return (
 
@@ -43,8 +44,8 @@ const EpisodeList = () => {
               >
                 <TableCell component="th" scope="row">
 
-                  <Link key={row.guid["#text"]} to={`/podcast/${podcastId}/episode/${i}`}>
-                    {row.title["#text"]}
+                  <Link key={row.guid["#text"]} className={'text-blue-600'} to={`/podcast/${podcastId}/episode/${i}`}>
+                    {ReactHtmlParser(row.title["#text"])}
                   </Link>
 
                 </TableCell>

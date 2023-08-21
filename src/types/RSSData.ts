@@ -4,6 +4,8 @@ export type Item = {
   guid: Tsr,
   pubDate:Tsr,
   "itunes:duration": Tsr,
+  "itunes:summary": Tsr,
+  "itunes:subtitle": Tsr, 
   description: Tsr,
   enclosure: Enclosure
 }
