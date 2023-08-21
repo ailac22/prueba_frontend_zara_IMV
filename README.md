@@ -15,7 +15,7 @@ Este repositorio contiene mi solución a una prueba técnica para la empresa Zar
 
 # Uso
 
-Se puede ver la web directamente en el [deploy de Netlify](https://64e2e2a66eefb644230cf845--chipper-bunny-025dbd.netlify.app/), o bien descargarse el repo y hacer en local
+Se puede ver la web directamente en el [deploy de Netlify](https://chipper-bunny-025dbd.netlify.app/), o bien descargarse el repo y hacer en local
 
 ```bash
 npm i --legacy-peer-deps
@@ -25,3 +25,10 @@ npm run dev
 y luego ir con el navegador a la url tipo localhost:{puerto} indicada
 
 Este desarrollo se ha realizado y probado con node v20.5.0
+
+# Notas
+
+- Lo más importante que se me ha quedado en el tintero ha sido el indicador de carga de datos en la barra principal. Tanto por tiempo como por estructura no lo he podido hacer
+- Otros detalles de estilo son mejorables: barra de audio con mejor estilo, tabla más similar a la del pdf, imágenes en la vista principal que sobresalgan del contenedor, etc...
+- La duración de cada episodio sale de diferentes maneras en cada podcast, pero eso es por inconsistencia de los datos y dado que no es muy importante no le he dedicado tiempo
+
