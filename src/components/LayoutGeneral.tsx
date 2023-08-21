@@ -3,8 +3,8 @@ import { Link, Outlet } from 'react-router-dom'
 const LayoutGeneral = () => {
 
   return (
-    <main className='flex justify-center'>
-      <div className='flex justify-center md:w-full mx-32 w-64 pt-5 '>
+    <main>
+      <div className='w-full lg:px-32 px-0 pt-8 '>
 
         <div>
           <Link to={'/'}>

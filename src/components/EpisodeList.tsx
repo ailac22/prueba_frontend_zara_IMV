@@ -20,12 +20,12 @@ const EpisodeList = () => {
 
   return (
 
-    <div>
+    <div className='p-0 w-full'>
       <CardContainer className="mb-5">
         <span className='text-2xl font-bold'>Episodes: {rssData?.rss.channel.item.length}</span>
       </CardContainer>
       <CardContainer>
-      <TableContainer component={Paper} className="p-0 bg-blue-500">
+      <TableContainer component={Paper} className="p-0 ">
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
             <TableRow>
@@ -44,7 +44,7 @@ const EpisodeList = () => {
               >
                 <TableCell component="th" scope="row">
 
-                  <Link key={row.guid["#text"]} className={'text-blue-600'} to={`/podcast/${podcastId}/episode/${i}`}>
+                  <Link key={row.guid["#text"]} className="text-blue-500" to={`/podcast/${podcastId}/episode/${i}`}>
                     {ReactHtmlParser(row.title["#text"])}
                   </Link>
 

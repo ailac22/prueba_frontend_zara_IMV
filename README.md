@@ -31,5 +31,5 @@ Este desarrollo se ha realizado y probado con node v20.5.0
 - Lo más importante que se me ha quedado en el tintero ha sido el indicador de carga de datos en la barra principal. Tanto por tiempo como por estructura no lo he podido hacer
 - La duración de cada episodio sale de diferentes maneras en cada podcast, pero eso es por inconsistencia de los datos y dado que no es muy importante no le he dedicado tiempo
 - Hay distintos campos en un epidsodio individual que podrian ser la descripción. He puesto el campo 'descripción', pero a veces es muy largo y no me ha dado tiempo a hacer elisión
-- Otros detalles de estilo son mejorables: barra de audio con mejor estilo, tabla más similar a la del pdf, imágenes en la vista principal que sobresalgan del contenedor, etc...
+- Otros detalles de estilo son mejorables: barra de audio con mejor estilo, pequeño incremento de tamaño de la barra lateral al entrar en episodio, tabla más similar a la del pdf, imágenes en la vista principal que sobresalgan del contenedor, etc...
 

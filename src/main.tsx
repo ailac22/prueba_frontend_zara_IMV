@@ -18,11 +18,12 @@ const router = createBrowserRouter([
       { index: true, element: <VistaPrincipal/> },
       {
         path: "/podcast",
-        element: <BarraLateralLayout/>,
+        element:<BarraLateralLayout/>, 
         children: [
           {
             path: ":podcastId",
-            element: <EpisodeList/>
+            element:  <EpisodeList/>,
+            
           },
           {
             path: ':podcastId/episode/:episodeId',

@@ -22,13 +22,13 @@ const BarraLateralLayout = () => {
 
   return (<section>
 
-    <div className='flex items-start'>
-      <CardContainer className="mr-28 w-64">
+    <div className='flex'>
+      <CardContainer className="mr-28 w-96 p-8">
         {/* <Card className = 'flex flex-col drop-shadow-sm items-center p-2'> */}
         <div className='flex flex-col stretch '>
           <div className='flex items-center justify-center'>
             <Link to={`/podcast/${podcastId}`} >
-              <img src={data?.results[0].artworkUrl600} className='rounded-lg w-64 text-sky-500' />
+              <img src={data?.results[0].artworkUrl600} className='rounded-lg w-64' />
             </Link>
           </div>
           <hr className='mt-3'></hr>
