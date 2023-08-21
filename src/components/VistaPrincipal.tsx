@@ -9,11 +9,12 @@ export default function VistaPrincipal() {
 
   if (isLoading || isFetching || error) return <>Cargando...</>  //TODO: Mejorar esto
 
+  console.log(data)
   const podcastList = data.feed.entry.map(entry => {
     return (
       <Link key={entry.id.label} to={`/podcast/${entry.id.attributes?.['im:id']}`}>
         <PodcastCard  
-        image={entry['im:image'][0].label} 
+        image={entry['im:image'][2].label}  
         name={entry['im:name'].label} 
         author={entry['im:artist'].label} />
       </Link>

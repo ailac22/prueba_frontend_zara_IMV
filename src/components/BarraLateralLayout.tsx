@@ -37,8 +37,9 @@ const BarraLateralLayout = () => {
 
     <Card>
     <div>
-        
-    </div>
+        {data?.results[0].trackName} </div>
+        <div>{data?.results[0].artistName}</div>
+        <div>{rssData?.rss.channel.description["#text"]}</div>
     </Card>
     <Outlet context={[data, rssData]}/>
   </section>)

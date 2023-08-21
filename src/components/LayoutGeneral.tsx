@@ -1,14 +1,16 @@
-import { Outlet } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 
 const LayoutGeneral = () => {
 
   return (
-    <main className='flex justify-center bg-blue-500'>
-      <div className='flex justify-center md:max-w-6xl w-10/12 bg-red-500'>
+    <main className='flex justify-center'>
+      <div className='flex justify-center md:max-w-6xl w-10/12 pt-5 bg-red-100'>
 
         <div>
-          <h1 className='text-blue-300 bold text-xl'>Podcaster</h1>
-          <hr className='pb-8'/>
+          <Link to={'/'}>
+          <h1 className='text-sky-800 bold text-xl'>Podcaster</h1>
+          </Link>
+          <hr className='pb-8 mt-3'/>
           <Outlet/>
         </div>
       </div>

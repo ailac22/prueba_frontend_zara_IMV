@@ -7,14 +7,18 @@ import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from
 
 const PodcastView = () => {
 
-  const [data, item] = useOutletContext();
+  let { podcastId, episodeId } = useParams();
+  const [data, rssData] = useOutletContext();
 
+  const item: Item = rssData?.rss.channel.item[episodeId as string]
+
+  console.log("episodeId", episodeId)
 
   return <section>
     <h1>{item.title["#text"]}</h1>
 
     <div>{ReactHtmlParser(item.description["#text"])}</div>
-    <audio controls>
+    <audio controls class='mainAudio'>
       <source src={item.enclosure["@_url"]} type={item.enclosure["@_type"]}/>
     Your browser does not support the audio element.
     </audio>

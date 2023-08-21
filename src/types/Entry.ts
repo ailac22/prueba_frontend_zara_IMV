@@ -9,6 +9,7 @@ type Entry = {
 
 type Attributes = {
   "im:id": string
+  height: number
 }
 
 export type Name = {

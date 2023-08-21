@@ -63,7 +63,7 @@ const EpisodeList = () => {
               >
                 <TableCell component="th" scope="row">
 
-                  <Link key={row.guid["#text"]} to={`/podcast/${podcastId}/episode/${1}`}>
+                  <Link key={row.guid["#text"]} to={`/podcast/${podcastId}/episode/${i}`}>
                     {row.title["#text"]}
                   </Link>
             

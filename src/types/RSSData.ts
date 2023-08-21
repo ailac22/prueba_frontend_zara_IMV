@@ -11,7 +11,8 @@ export type Item = {
 type Channel = {
   "itunes:author": string
 
-  item: Item[]
+  item: Item[],
+  description: Tsr
 }
 
 type RSSData = {
