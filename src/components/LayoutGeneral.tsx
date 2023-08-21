@@ -8,7 +8,7 @@ const LayoutGeneral = () => {
 
         <div>
           <Link to={'/'}>
-            <h1 className='text-sky-800 text-bold text-xl'>Podcaster</h1>
+            <h1 className='text-sky-800 font-bold text-xl'>Podcaster</h1>
           </Link>
           <hr className='pb-8 mt-3' />
           <Outlet />
