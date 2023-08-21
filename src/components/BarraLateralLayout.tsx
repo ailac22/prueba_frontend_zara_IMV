@@ -38,7 +38,7 @@ const BarraLateralLayout = () => {
         <div>{rssData?.rss.channel.description["#text"]}</div>
       {/* </Card> */}
       </CardContainer>
-      <Outlet context={[data, rssData]}/>
+      <Outlet context={{data, rssData}}/>
     </div>
   </section>)
 

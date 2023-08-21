@@ -1,6 +1,8 @@
+export interface AuxProps  { 
+    children: React.ReactNode
+ }
 
-
-const CardContainer = ({children}) => {
+const CardContainer: React.FC<AuxProps> = ({children}) => {
 
   return (<div  className='border-2 customDropShadow'>
     {children}

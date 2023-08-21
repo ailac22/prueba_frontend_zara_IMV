@@ -4,6 +4,7 @@ import LookupResults from "../types/LookupResults"
 import { useQuery } from "@tanstack/react-query"
 import { XMLParser }  from "fast-xml-parser";
 import RSSData from "../types/RSSData";
+import { useOutletContext } from "react-router-dom";
 
 const podcastLimit = 100
 
@@ -65,7 +66,9 @@ export const usePodcastRSSData = (rssUrl: string, id:string, enabled: boolean) =
     staleTime: 300000
   })
 
-
+export function useRssData() {
+  return useOutletContext<{data: LookupResults, rssData: RSSData}>();
+}
 
   
 

@@ -2,7 +2,7 @@ import PodcastCard from './PodcastCard'
 import { Link } from 'react-router-dom'
 import { usePodcastsData } from '../hooks/usePodcastsData'
 import { useState } from 'react'
-import { Item } from '../types/RSSData'
+import Entry from '../types/Entry'
 
 export default function VistaPrincipal() {
 
@@ -12,7 +12,7 @@ export default function VistaPrincipal() {
 
   if (isLoading || isFetching || error) return <>Cargando...</>  //TODO: Mejorar esto
 
-  const filterFn = (item: Item) => {
+  const filterFn = (item: Entry) => {
     return item['im:name'].label.toUpperCase().includes(value.toUpperCase()) || 
       item['im:artist'].label.toUpperCase().includes(value.toUpperCase()) || value === ''
   }
