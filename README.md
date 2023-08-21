@@ -9,7 +9,7 @@ Este repositorio contiene mi solución a una prueba técnica para la empresa Zar
 - [TailwindCSS](https://tailwindcss.com/)
 - [fast-xml-parser](https://www.npmjs.com/package/fast-xml-parser)
 - [Material UI](https://mui.com/)
-- [react-html-parser]
+- [react-html-parser](https://www.npmjs.com/package/react-html-parser)
 
 
 # Uso
