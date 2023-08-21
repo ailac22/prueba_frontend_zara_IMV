@@ -1,6 +1,7 @@
 
 type LookupResults = {
   results: LookupResult[]
+
 }
 
 type LookupResult = {
@@ -9,7 +10,10 @@ type LookupResult = {
 			collectionName: string,
 			trackName: string,
 			collectionCensoredName: string,
-      feedUrl: string
+      feedUrl: string,
+      artworkUrl100: string,
+      artworkUrl600: string
+
 }
 
 

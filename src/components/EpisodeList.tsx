@@ -1,6 +1,4 @@
 import { useOutletContext, useParams } from "react-router-dom";
-import { usePodcastData, usePodcastRSSData } from "../hooks/usePodcastsData";
-import { XMLParser } from "fast-xml-parser";
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -11,7 +9,6 @@ import Paper from '@mui/material/Paper';
 import { Item } from "../types/RSSData";
 import { Link } from 'react-router-dom'
 
-const parser = new XMLParser();
 
 const EpisodeList = () => {
 
@@ -39,7 +36,7 @@ const EpisodeList = () => {
 
 
   let { podcastId } = useParams();
-  const [data, rssData] = useOutletContext();
+  const [rssData] = useOutletContext();
 
   return (
 

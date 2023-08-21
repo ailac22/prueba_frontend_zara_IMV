@@ -15,7 +15,7 @@ const parser = new XMLParser({alwaysCreateTextNode:true, ignoreAttributes:false,
 //   })
 //
 
-const allowCorsURL ='https://api.allorigins.win/get?url='
+// const allowCorsURL ='https://api.allorigins.win/get?url='
 
 // const allowCorsURL =''
 
