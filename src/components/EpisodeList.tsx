@@ -49,10 +49,10 @@ const EpisodeList = () => {
                   </Link>
 
                 </TableCell>
-                <TableCell align="right">
+                <TableCell align="left">
                   {new Date(row.pubDate["#text"]).toLocaleDateString('en-US')}
                 </TableCell>
-                <TableCell align="right">
+                <TableCell align="left">
                   {row["itunes:duration"]?.["#text"]}
                 </TableCell>
               </TableRow>
