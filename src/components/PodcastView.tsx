@@ -13,16 +13,16 @@ const PodcastView = () => {
   if (!episodeId) return <></>
   const item: Item = rssData?.rss.channel.item[parseInt(episodeId)]
 
-  return <section>
+  return <section className='basis-10/12'>
     <CardContainer>
-      <h1>{item.title["#text"]}</h1>
-    </CardContainer>
+      <h1 className='mb-5 font-bold text-2xl'>{item.title["#text"]}</h1>
 
     <div>{ReactHtmlParser(item.description["#text"])}</div>
-    <audio controls className='mainAudio'>
+    <audio controls className='mainAudio mt-5'>
       <source src={item.enclosure["@_url"]} type={item.enclosure["@_type"]} />
       Your browser does not support the audio element.
     </audio>
+    </CardContainer>
   </section>
 }
 

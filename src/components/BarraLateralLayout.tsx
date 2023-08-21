@@ -1,8 +1,9 @@
-import { Outlet, useParams } from "react-router-dom";
+import { Link, Outlet, useParams } from "react-router-dom";
 
 import { usePodcastData, usePodcastRSSData } from "../hooks/usePodcastsData";
 import CardContainer from "./CardContainer";
 import ReactHtmlParser from 'react-html-parser';
+
 
 const BarraLateralLayout = () => {
 
@@ -20,21 +21,24 @@ const BarraLateralLayout = () => {
 
   if (!data || !rssData) return <></>
 
-
   return (<section>
 
-    <div className='flex'>
+    <div className='flex items-start'>
       <CardContainer className="w-72 mr-10">
 
         {/* <Card className = 'flex flex-col drop-shadow-sm items-center p-2'> */}
-        <div className='flex flex-col stretch max-w-5xl'>
+        <div className='flex flex-col stretch '>
           <div className='flex items-center justify-center'>
-            <img src={data?.results[0].artworkUrl600} className='rounded-lg w-64' />
+            <Link to={`/podcast/${podcastId}`} >
+              <img src={data?.results[0].artworkUrl600} className='rounded-lg w-64' />
+            </Link>
           </div>
           <hr className='mt-3'></hr>
           <div className='my-5 pl-5'>
-            <div className='font-bold text-xl w-full'>{data?.results[0].trackName}</div>
-            <div>by <span className='italic'>{data?.results[0].artistName}</span></div>
+            <Link to={`/podcast/${podcastId}`} >
+              <div className='font-bold text-xl w-full'>{data?.results[0].trackName}</div>
+              <div>by <span className='italic'>{data?.results[0].artistName}</span></div>
+            </Link>
           </div>
           <hr className='mt-3'></hr>
           <div className='mt-5'>

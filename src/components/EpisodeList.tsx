@@ -20,11 +20,11 @@ const EpisodeList = () => {
   return (
 
     <div>
-
-      <CardContainer className="bg-red-500">
-        <span>Episodes: {rssData?.rss.channel.item.length}</span>
+      <CardContainer className="mb-5">
+        <span className='text-2xl font-bold'>Episodes: {rssData?.rss.channel.item.length}</span>
       </CardContainer>
-      <TableContainer component={Paper} className="bg-blue-500">
+      <CardContainer>
+      <TableContainer component={Paper} className="p-0 bg-blue-500">
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
             <TableRow>
@@ -33,12 +33,13 @@ const EpisodeList = () => {
               <TableCell align="left"><span className='font-bold'>Duration</span></TableCell>
             </TableRow>
           </TableHead>
-          <TableBody>
+          <TableBody >
             {rssData?.rss.channel.item.map((row: Item, i: number) => (
               <TableRow
                 // key={row.name}
                 key={row.guid["#text"]}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                className="border-0"
               >
                 <TableCell component="th" scope="row">
 
@@ -58,6 +59,7 @@ const EpisodeList = () => {
           </TableBody>
         </Table>
       </TableContainer>
+      </CardContainer>
 
     </div>
   )
