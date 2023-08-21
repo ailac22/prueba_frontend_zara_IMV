@@ -4,7 +4,7 @@ Este repositorio contiene mi solución a una prueba técnica para la empresa Zar
 
 - [React](https://react.dev/)
 - [Vite](https://vitejs.dev/)
-- [Typescript] (https://www.typescriptlang.org/)
+- [Typescript](https://www.typescriptlang.org/)
 - [React Router 6](https://reactrouter.com/en/main)
 - [Tanstack Query](https://tanstack.com/query/latest)
 - [TailwindCSS](https://tailwindcss.com/)
